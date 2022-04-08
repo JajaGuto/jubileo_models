@@ -1,0 +1,989 @@
+<?xml version="1.0"?>
+<!-- created with Phobos 1.0.1 "Capricious Choutengan" -->
+  <robot name="jubileo">
+    <link name="world"/>
+    <link name="down_eyelids_link">
+      <inertial>
+        <origin xyz="0.00329 -0.01359 -0.05522" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00121" ixy="0" ixz="0" iyy="4e-05" iyz="0" izz="0.0012"/>
+      </inertial>
+      <visual name="down_eyelids">
+        <origin xyz="0.00329 -0.01359 -0.05522" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/down_eyelids.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="BLACK_006"/>
+      </visual>
+      <collision name="down_eyelids">
+        <origin xyz="0.00648 -0.01195 -0.05522" rpy="-1.5708 0 0"/>
+        <geometry>
+          <box size="0.01906 0.1181 0.00445"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="waist_rot_link">
+      <inertial>
+        <origin xyz="-0.05 -0.000478 -0.06" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00121" ixy="0" ixz="0" iyy="4e-05" iyz="0" izz="0.0012"/>
+      </inertial>
+      <visual name="waist_rot">
+        <origin xyz="-0.05 -0.000478 -0.06" rpy="0 -1.5708 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/waist_rot.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="BLACK_006"/>
+      </visual>
+      <collision name="waist_rot">
+        <origin xyz="-0.03 -0.000403 -0.05" rpy="0 -1.5708 0"/>
+        <geometry>
+          <box size="0.1 0.03 0.068"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="torso_link">
+      <inertial>
+        <origin xyz="-0.02 -0.000304 -0.09" rpy="0 0 0"/>
+        <mass value="0.3"/>
+        <inertia ixx="0.00121" ixy="0" ixz="0" iyy="4e-05" iyz="0" izz="0.0012"/>
+      </inertial>
+      <visual name="torso">
+        <origin xyz="-0.02 -0.000304 -0.09" rpy="3.14159 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/torso.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="BLACK_006"/>
+      </visual>
+      <collision name="torso">
+        <origin xyz="0.00572 0.000306 -0.10" rpy="3.14159 0 0"/>
+        <geometry>
+          <box size="0.12 0.215 0.1287"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="head_link">
+      <inertial>
+        <origin xyz="0.04174 -0.08702 -0.02365" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.0041" ixy="-0.00027" ixz="0" iyy="0.00399" iyz="-1e-05" izz="0.00286"/>
+      </inertial>
+      <visual name="head">
+        <origin xyz="0.04174 -0.08702 -0.02365" rpy="1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/head.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="WHITE_004"/>
+      </visual>
+      <collision name="head.000">
+        <origin xyz="0.04141 -0.08829 -0.0235" rpy="1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/head_collision.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="jaw_link">
+      <inertial>
+        <origin xyz="0.01044 0.01344 -0.08745" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.0051" ixy="-0.00201" ixz="0" iyy="0.0044" iyz="0" izz="0.00514"/>
+      </inertial>
+      <visual name="jaw">
+        <origin xyz="0.01044 0.01344 -0.08745" rpy="1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/jaw.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="Face_000"/>
+      </visual>
+      <collision name="jaw.000">
+        <origin xyz="0.0098 0.01331 -0.0874" rpy="1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/jaw_collision.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="left_arm_link">
+      <inertial>
+        <origin xyz="0 0 0.02" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00017" ixy="0" ixz="0" iyy="0.00057" iyz="0" izz="0.00067"/>
+      </inertial>
+      <visual name="left_arm">
+        <origin xyz="0 0 0.02" rpy="1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/left_arm.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="BLACK_006"/>
+      </visual>
+      <collision name="left_arm">
+        <origin xyz="0 0 0.01925" rpy="1.5708 0 0"/>
+        <geometry>
+          <box size="0.07201 0.04151 0.026"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="left_biceps_link">
+      <inertial>
+        <origin xyz="0.00214 0.04707 -0.03151" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.0016" ixy="0" ixz="0" iyy="0.00149" iyz="-0.0002" izz="0.00033"/>
+      </inertial>
+      <visual name="left_biceps">
+        <origin xyz="0.00214 0.04707 -0.03151" rpy="1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/left_biceps.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+      <collision name="left_biceps">
+        <origin xyz="0.00026 0.04574 -0.03244" rpy="1.5708 0 0"/>
+        <geometry>
+          <box size="0.05175 0.06291 0.14399"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="left_elbow_rot_link">
+      <inertial>
+        <origin xyz="0 -0.00254 0.01187" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00041" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.00036"/>
+      </inertial>
+      <visual name="left_elbow_rot">
+        <origin xyz="0 -0.00254 0.01187" rpy="-3.14159 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/left_elbow_rot.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+      <collision name="left_elbow_rot">
+        <origin xyz="0 -0.00254 0.0167" rpy="-3.14159 0 0"/>
+        <geometry>
+          <box size="0.022 0.055 0.03299"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="left_wrist_link">
+      <inertial>
+        <origin xyz="0.0931 0.00205 -0.06058" rpy="0 0 0"/>
+        <mass value="1.92"/>
+        <inertia ixx="0.00226" ixy="0.00019" ixz="-0.00128" iyy="0.00366" iyz="-9e-05" izz="0.00297"/>
+      </inertial>
+      <visual name="left_wrist">
+        <origin xyz="0.07331 0.0038 -0.02179" rpy="0 -1.5708 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/left_wrist.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+      <collision name="left_wrist">
+        <origin xyz="0.05204 0.00164 -0.02175" rpy="0 -1.5708 0"/>
+        <geometry>
+          <box size="0.07339 0.0383 0.10955"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="left_end1_link">
+      <inertial>
+        <origin xyz="0.0585 0.01713 -0.02293" rpy="0 0 0"/>
+        <mass value="0.96"/>
+        <inertia ixx="0.00028" ixy="-0.00035" ixz="0" iyy="0.00102" iyz="0" izz="0.00093"/>
+      </inertial>
+      <visual name="left_end1">
+        <origin xyz="0.0585 0.01713 -0.02293" rpy="1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/left_end1.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="Face_000"/>
+      </visual>
+      <collision name="left_end1.000">
+        <origin xyz="0.05791 0.0173 -0.02285" rpy="1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/left_end1_collision.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="left_end2_link">
+      <inertial>
+        <origin xyz="-0.05895 0.01713 -0.02254" rpy="0 0 0"/>
+        <mass value="0.96"/>
+        <inertia ixx="0.00028" ixy="0.00035" ixz="2e-05" iyy="0.00102" iyz="-1e-05" izz="0.00092"/>
+      </inertial>
+      <visual name="left_end2">
+        <origin xyz="-0.05895 0.01713 -0.02254" rpy="1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/left_end2.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="Face_000"/>
+      </visual>
+      <collision name="left_end2.000">
+        <origin xyz="-0.05912 0.01799 -0.02118" rpy="1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/left_end2_collision.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="left_eye_hor_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00015" ixy="0" ixz="0" iyy="9e-05" iyz="0" izz="9e-05"/>
+      </inertial>
+      <visual name="left_eye_hor">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/left_eye_hor.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="WHITE_004"/>
+      </visual>
+      <collision name="left_eye_hor">
+        <origin xyz="-0.00166 0 -4e-05" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.01778"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="left_eye_link">
+      <inertial>
+        <origin xyz="0.0039 4e-05 0" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.0001" ixy="0" ixz="0" iyy="6e-05" iyz="0" izz="6e-05"/>
+      </inertial>
+      <visual name="left_eye">
+        <origin xyz="0.0039 4e-05 0" rpy="1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/left_eye.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="WHITE_004"/>
+      </visual>
+      <collision name="left_eye">
+        <origin xyz="0.00024 4e-05 0" rpy="1.5708 0 0"/>
+        <geometry>
+          <sphere radius="0.01653"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="left_eyebrow_prism_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="2e-05"/>
+      </inertial>
+      <visual name="left_eyebrow_prism">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/left_eyebrow_prism.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="BLACK_007"/>
+      </visual>
+      <collision name="left_eyebrow_prism">
+        <origin xyz="-0.00046 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.00276 0.00414 0.00414"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="left_forearm_link">
+      <inertial>
+        <origin xyz="-0.00079 0.01044 -0.03478" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00079" ixy="0" ixz="0" iyy="0.00023" iyz="-6e-05" izz="0.00074"/>
+      </inertial>
+      <visual name="left_forearm">
+        <origin xyz="-0.00079 0.01044 -0.03478" rpy="1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/left_forearm.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+      <collision name="left_forearm">
+        <origin xyz="3e-05 0.0125 -0.04468" rpy="1.5708 0 0"/>
+        <geometry>
+          <box size="0.041 0.09263 0.05175"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="left_shoulder_link">
+      <inertial>
+        <origin xyz="0.01569 -0.00099 -0.02718" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.0018" ixy="0.00024" ixz="-2e-05" iyy="0.0018" iyz="0.00016" izz="0.00044"/>
+      </inertial>
+      <visual name="left_shoulder">
+        <origin xyz="0.01569 -0.00099 -0.02718" rpy="0 -1.5708 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/left_shoulder.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+      <collision name="left_shoulder">
+        <origin xyz="0.04702 -0.0083 -0.02977" rpy="0 -1.5708 0"/>
+        <geometry>
+          <box size="0.06634 0.072 0.14466"/>
+        </geometry>
+      </collision>
+    </link>
+
+
+    <link name="neck_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00054" ixy="0" ixz="0" iyy="0.00028" iyz="0" izz="0.00035"/>
+      </inertial>
+      <visual name="neck">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/neck.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+      <collision name="neck">
+        <origin xyz="-2e-05 -4e-05 0.0152" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.029 0.05135 0.04307"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="left_eyebrow_link">
+      <inertial>
+        <origin xyz="0.00223 -3e-05 0.00591" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00018" ixy="0" ixz="2e-05" iyy="2e-05" iyz="0" izz="0.00019"/>
+      </inertial>
+      <visual name="left_eyebrow">
+        <origin xyz="0.00223 -3e-05 0.00591" rpy="0 -1.5708 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/left_eyebrow.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="BLACK_007"/>
+      </visual>
+      <collision name="left_eyebrow">
+        <origin xyz="0.002 -3e-05 0.00231" rpy="0 -1.5708 0"/>
+        <geometry>
+          <box size="0.02278 0.05217 0.01179"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="right_arm_link">
+      <inertial>
+        <origin xyz="0 0 0.02" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00017" ixy="0" ixz="0" iyy="0.00057" iyz="0" izz="0.00067"/>
+      </inertial>
+      <visual name="right_arm">
+        <origin xyz="0 0 0.02" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/right_arm.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="BLACK_006"/>
+      </visual>
+      <collision name="right_arm">
+        <origin xyz="0 0 0.01925" rpy="-1.5708 0 0"/>
+        <geometry>
+          <box size="0.07201 0.04151 0.026"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="right_biceps_link">
+      <inertial>
+        <origin xyz="0.00195 -0.04137 -0.03755" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00162" ixy="0" ixz="0" iyy="0.00152" iyz="0.00016" izz="0.00031"/>
+      </inertial>
+      <visual name="right_biceps">
+        <origin xyz="0.00195 -0.04137 -0.03755" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/right_biceps.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+      <collision name="right_biceps">
+        <origin xyz="0.00026 -0.04574 -0.03601" rpy="-1.5708 0 0"/>
+        <geometry>
+          <box size="0.05175 0.06583 0.14399"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="right_elbow_rot_link">
+      <inertial>
+        <origin xyz="0 0.00202 0.01187" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00041" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.00036"/>
+      </inertial>
+      <visual name="right_elbow_rot">
+        <origin xyz="0 0.00202 0.01187" rpy="-3.14159 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/right_elbow_rot.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+      <collision name="right_elbow_rot">
+        <origin xyz="0 0.00202 0.0167" rpy="-3.14159 0 0"/>
+        <geometry>
+          <box size="0.022 0.055 0.03299"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="right_end1_link">
+      <inertial>
+        <origin xyz="0.0585 -0.01713 -0.02301" rpy="0 0 0"/>
+        <mass value="0.96"/>
+        <inertia ixx="0.00028" ixy="-0.00035" ixz="0" iyy="0.00102" iyz="0" izz="0.00093"/>
+      </inertial>
+      <visual name="right_end1">
+        <origin xyz="0.0585 -0.01713 -0.02301" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/right_end1.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="Face_000"/>
+      </visual>
+      <collision name="right_end1.000">
+        <origin xyz="0.05826 -0.0173 -0.02294" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/right_end1_collision.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="right_end2_link">
+      <inertial>
+        <origin xyz="-0.05895 -0.01713 -0.02263" rpy="0 0 0"/>
+        <mass value="0.96"/>
+        <inertia ixx="0.00028" ixy="0.00035" ixz="-2e-05" iyy="0.00102" iyz="1e-05" izz="0.00092"/>
+      </inertial>
+      <visual name="right_end2">
+        <origin xyz="-0.05895 -0.01713 -0.02263" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/right_end2.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="Face_000"/>
+      </visual>
+      <collision name="right_end2.000">
+        <origin xyz="-0.05936 -0.01782 -0.02126" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/right_end2_collision.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="right_eye_hor_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00015" ixy="0" ixz="0" iyy="9e-05" iyz="0" izz="9e-05"/>
+      </inertial>
+      <visual name="right_eye_hor">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/right_eye_hor.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="WHITE_004"/>
+      </visual>
+      <collision name="right_eye_hor">
+        <origin xyz="-0.00166 0 -4e-05" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.01778"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="right_eye_link">
+      <inertial>
+        <origin xyz="0.0039 -4e-05 0" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.0001" ixy="0" ixz="0" iyy="6e-05" iyz="0" izz="6e-05"/>
+      </inertial>
+      <visual name="right_eye">
+        <origin xyz="0.0039 -4e-05 0" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/right_eye.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="WHITE_004"/>
+      </visual>
+      <collision name="right_eye">
+        <origin xyz="0.00017 -4e-05 0" rpy="-1.5708 0 0"/>
+        <geometry>
+          <sphere radius="0.01653"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="right_eyebrow_link">
+      <inertial>
+        <origin xyz="0.00223 3e-05 0.00591" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00018" ixy="0" ixz="-2e-05" iyy="2e-05" iyz="0" izz="0.00019"/>
+      </inertial>
+      <visual name="right_eyebrow">
+        <origin xyz="0.00223 3e-05 0.00591" rpy="0 -1.5708 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/right_eyebrow.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="BLACK_007"/>
+      </visual>
+      <collision name="right_eyebrow">
+        <origin xyz="0.002 3e-05 0.00231" rpy="0 -1.5708 0"/>
+        <geometry>
+          <box size="0.02278 0.05217 0.01179"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="right_eyebrow_prism_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="2e-05"/>
+      </inertial>
+      <visual name="right_eyebrow_prism">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/right_eyebrow_prism.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="BLACK_007"/>
+      </visual>
+      <collision name="right_eyebrow_prism">
+        <origin xyz="-0.00046 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.00276 0.00414 0.00414"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="right_forearm_link">
+      <inertial>
+        <origin xyz="-0.00079 -0.01044 -0.03864" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00079" ixy="0" ixz="0" iyy="0.00023" iyz="6e-05" izz="0.00074"/>
+      </inertial>
+      <visual name="right_forearm">
+        <origin xyz="-0.00079 -0.01044 -0.03864" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/right_forearm.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+      <collision name="right_forearm">
+        <origin xyz="3e-05 -0.0125 -0.04854" rpy="-1.5708 0 0"/>
+        <geometry>
+          <box size="0.041 0.09263 0.05175"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="right_shoulder_link">
+      <inertial>
+        <origin xyz="0.01569 0.00031 -0.02718" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.0018" ixy="0.00024" ixz="2e-05" iyy="0.0018" iyz="-0.00016" izz="0.00044"/>
+      </inertial>
+      <visual name="right_shoulder">
+        <origin xyz="0.01569 0.00031 -0.02718" rpy="0 -1.5708 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/right_shoulder.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+      <collision name="right_shoulder">
+        <origin xyz="0.04702 0.00762 -0.02977" rpy="0 -1.5708 0"/>
+        <geometry>
+          <box size="0.06634 0.072 0.14466"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="right_wrist_link">
+      <inertial>
+        <origin xyz="0.0771 -6e-05 -0.02177" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00061" ixy="0" ixz="0" iyy="0.00082" iyz="0" izz="0.00037"/>
+      </inertial>
+      <visual name="right_wrist">
+        <origin xyz="0.0771 -6e-05 -0.02177" rpy="0 -1.5708 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/right_wrist.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+      <collision name="right_wrist">
+        <origin xyz="0.05204 -0.00066 -0.02175" rpy="0 -1.5708 0"/>
+        <geometry>
+          <box size="0.07339 0.03991 0.10955"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="root_link">
+      <inertial>
+        <origin xyz="-0.04631 -0.00117 0.36756" rpy="0 0 0"/>
+        <mass value="0.96"/>
+        <inertia ixx="0.07638" ixy="0.01196" ixz="0" iyy="0.07928" iyz="2e-05" izz="0.04695"/>
+      </inertial>
+      <visual name="root">
+        <origin xyz="-0.04631 -0.00117 0.36756" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/root.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="BLACK_006"/>
+      </visual>
+      <collision name="root.000">
+        <origin xyz="-0.04646 -0.00107 0.36849" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/root_collision.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="up_eyelids_link">
+      <inertial>
+        <origin xyz="0.0034 -0.01396 -0.05525" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00123" ixy="0" ixz="0" iyy="4e-05" iyz="0" izz="0.00121"/>
+      </inertial>
+      <visual name="up_eyelids">
+        <origin xyz="0.0034 -0.01396 -0.05525" rpy="1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/up_eyelids.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="BLACK_006"/>
+      </visual>
+      <collision name="up_eyelids">
+        <origin xyz="0.00608 -0.01282 -0.05553" rpy="1.5708 0 0"/>
+        <geometry>
+          <box size="0.01899 0.1181 0.00571"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="waist_link">
+      <inertial>
+        <origin xyz="-0.01826 -0.01298 -0.02894" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.00039" ixy="-2e-05" ixz="0" iyy="0.00088" iyz="0" izz="0.00076"/>
+      </inertial>
+      <visual name="waist">
+        <origin xyz="-0.01826 -0.01298 -0.02894" rpy="1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://meshes/dae/waist.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+      <collision name="waist">
+        <origin xyz="-0.02413 -0.01783 -0.02923" rpy="1.5708 0 0"/>
+        <geometry>
+          <box size="0.09344 0.05243 0.065"/>
+        </geometry>
+      </collision>
+    </link>
+
+
+
+
+  <!--Disable_Collisions -->
+  <disable_collision link1="root_link" link2="right_forearm_link">
+  </disable_collision>
+  <disable_collision link1="root_link" link2="left_forearm_link">
+  </disable_collision>
+  <disable_collision link1="waist_link" link2="waist_rot_link">
+  </disable_collision>
+  <disable_collision link1="root_link" link2="waist_rot_link">
+  </disable_collision>
+  <disable_collision link1="root_link" link2="waist_link">
+  </disable_collision>
+  <disable_collision link1="torso_link" link2="right_shoulder_link">
+  </disable_collision>
+  <disable_collision link1="torso_link" link2="left_shoulder_link">
+  </disable_collision>
+
+
+
+
+
+
+    <joint name="joint_world" type="fixed">
+      <parent link="world"/>
+      <child link="root_link"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </joint>
+
+    <joint name="down_eyelids_link" type="revolute">
+      <origin xyz="0.09305 -0.09166 -0.07868" rpy="-3.14159 0 0"/>
+      <parent link="head_link"/>
+      <child link="down_eyelids_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-0.6" upper="0.6" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="head_link" type="revolute">
+      <origin xyz="7e-05 0.02563 0.02528" rpy="-1.5708 0 0"/>
+      <parent link="neck_link"/>
+      <child link="head_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-0.6" upper="0.6" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="jaw_link" type="revolute">
+      <origin xyz="0.00838 -0.11349 0.06376" rpy="0 0 0"/>
+      <parent link="head_link"/>
+      <child link="jaw_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="0" upper="0.3" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="left_shoulder_link" type="revolute">
+      <origin xyz="0.03 0 0.03932" rpy="1.5708 0 1.5708"/>
+      <parent link="left_arm_link"/>
+      <child link="left_shoulder_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="0" upper="1.6" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="left_arm_link" type="revolute">
+      <origin xyz="0.00953 -0.10874 -0.11788" rpy="1.5708 0 0"/>
+      <parent link="torso_link"/>
+      <child link="left_arm_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.6" upper="1.0" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="left_biceps_link" type="revolute">
+      <origin xyz="0.11909 0.02561 -0.03739" rpy="-1.5708 -1.5708 0"/>
+      <parent link="left_shoulder_link"/>
+      <child link="left_biceps_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.6" upper="0" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="left_elbow_rot_link" type="revolute">
+      <origin xyz="0.00129 0.1177 -0.04181" rpy="-1.5708 0 0"/>
+      <parent link="left_biceps_link"/>
+      <child link="left_elbow_rot_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.6" upper="1.6" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="left_forearm_link" type="revolute">
+      <origin xyz="8e-05 -0.0262 0.03134" rpy="1.5708 0 0"/>
+      <parent link="left_elbow_rot_link"/>
+      <child link="left_forearm_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.0" upper="1.0" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="left_wrist_link" type="revolute">
+      <origin xyz="0.02254 0.00058 -0.02385" rpy="1.5708 0 1.5708"/>
+      <parent link="left_forearm_link"/>
+      <child link="left_wrist_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.0" upper="1.0" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="left_end1_link" type="revolute">
+      <origin xyz="0.09576 0.02285 -0.00226" rpy="-1.5708 -1.5708 0"/>
+      <parent link="left_wrist_link"/>
+      <child link="left_end1_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="0" upper="1.25" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="left_end2_link" type="revolute">
+      <origin xyz="0.09576 0.02285 -0.04042" rpy="-1.5708 -1.5708 0"/>
+      <parent link="left_wrist_link"/>
+      <child link="left_end2_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.25" upper="0" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="left_eye_hor_link" type="revolute">
+      <origin xyz="0.09366 -0.09189 0.01404" rpy="1.5708 0 0"/>
+      <parent link="head_link"/>
+      <child link="left_eye_hor_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-0.6" upper="0.6" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="left_eye_link" type="revolute">
+      <origin xyz="0 0 0" rpy="-1.5708 0 0"/>
+      <parent link="left_eye_hor_link"/>
+      <child link="left_eye_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-0.6" upper="0.6" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="left_eyebrow_link" type="revolute">
+      <origin xyz="0.01 0 0" rpy="0 1.5708 0"/>
+      <parent link="left_eyebrow_prism_link"/>
+      <child link="left_eyebrow_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-0.6" upper="0.6" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="left_eyebrow_prism_link" type="prismatic">
+      <origin xyz="0.09768 -0.13049 0.01366" rpy="1.5708 0 0"/>
+      <parent link="head_link"/>
+      <child link="left_eyebrow_prism_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="0" upper="0.026" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="neck_link" type="revolute">
+      <origin xyz="-0.00366 0.0001 -0.21099" rpy="3.14159 0 0"/>
+      <parent link="torso_link"/>
+      <child link="neck_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.4" upper="1.4" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="right_arm_link" type="revolute">
+      <origin xyz="0.00953 0.10929 -0.11788" rpy="-1.5708 0 0"/>
+      <parent link="torso_link"/>
+      <child link="right_arm_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.0" upper="1.6" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="right_shoulder_link" type="revolute">
+      <origin xyz="0.03 0 0.03864" rpy="-1.5708 0 -1.5708"/>
+      <parent link="right_arm_link"/>
+      <child link="right_shoulder_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.6" upper="0" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="right_biceps_link" type="revolute">
+      <origin xyz="0.11909 -0.02839 -0.03739" rpy="1.5708 -1.5708 0"/>
+      <parent link="right_shoulder_link"/>
+      <child link="right_biceps_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="0" upper="1.6" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="right_elbow_rot_link" type="revolute">
+      <origin xyz="0.00129 -0.1177 -0.04339" rpy="1.5708 0 0"/>
+      <parent link="right_biceps_link"/>
+      <child link="right_elbow_rot_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.6" upper="1.6" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="right_forearm_link" type="revolute">
+      <origin xyz="8e-05 0.02954 0.03134" rpy="-1.5708 0 0"/>
+      <parent link="right_elbow_rot_link"/>
+      <child link="right_forearm_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.0" upper="1.0" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="right_wrist_link" type="revolute">
+      <origin xyz="0.02254 -0.00058 -0.02754" rpy="-1.5708 0 -1.5708"/>
+      <parent link="right_forearm_link"/>
+      <child link="right_wrist_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.0" upper="1.0" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="right_end1_link" type="revolute">
+      <origin xyz="0.09576 -0.02276 -0.00226" rpy="1.5708 -1.5708 0"/>
+      <parent link="right_wrist_link"/>
+      <child link="right_end1_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.25" upper="0" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="right_end2_link" type="revolute">
+      <origin xyz="0.09576 -0.02276 -0.04042" rpy="1.5708 -1.5708 0"/>
+      <parent link="right_wrist_link"/>
+      <child link="right_end2_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="0" upper="1.25" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="right_eye_hor_link" type="revolute">
+      <origin xyz="0.09366 -0.09189 -0.06093" rpy="1.5708 0 0"/>
+      <parent link="head_link"/>
+      <child link="right_eye_hor_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-0.6" upper="0.6" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="right_eye_link" type="revolute">
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <parent link="right_eye_hor_link"/>
+      <child link="right_eye_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-0.6" upper="0.6" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="right_eyebrow_link" type="revolute">
+      <origin xyz="0.01 0 0" rpy="0 1.5708 0"/>
+      <parent link="right_eyebrow_prism_link"/>
+      <child link="right_eyebrow_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-0.6" upper="0.6" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="right_eyebrow_prism_link" type="prismatic">
+      <origin xyz="0.09768 -0.13049 -0.06074" rpy="1.5708 0 0"/>
+      <parent link="head_link"/>
+      <child link="right_eyebrow_prism_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="0" upper="0.026" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="torso_link" type="revolute">
+      <origin xyz="-0.07 0 -0.05036449" rpy="0 -1.5708 3.14159"/>
+      <parent link="waist_rot_link"/>
+      <child link="torso_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.0" upper="1.0" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="up_eyelids_link" type="revolute">
+      <origin xyz="0.09306 -0.09174 0.03179" rpy="0 0 0"/>
+      <parent link="head_link"/>
+      <child link="up_eyelids_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-0.6" upper="0.6" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="waist_link" type="revolute">
+      <origin xyz="-0.00941 0.02623 0.56369" rpy="-1.5708 0 0"/>
+      <parent link="root_link"/>
+      <child link="waist_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-0.5" upper="0.5" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="waist_rot_link" type="revolute">
+      <origin xyz="0.0297 -0.0025 -0.0292" rpy="1.5708 0 1.5708"/>
+      <parent link="waist_link"/>
+      <child link="waist_rot_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-0.5" upper="0.5" effort="2.0" velocity="1.0"/>
+    </joint>
+
+    <material name="BLACK_006">
+      <color rgba="0.33976 0.45369 0.34471 1.0"/>
+    </material>
+
+    <material name="BLACK_007">
+      <color rgba="0.00291 0.00291 0.00291 1.0"/>
+    </material>
+
+    <material name="Face_000">
+      <color rgba="0.01746 0.2639 0.18537 1.0"/>
+    </material>
+
+    <material name="WHITE_004">
+      <color rgba="0.64 0.64 0.64 1.0"/>
+    </material>
+
+  </robot>
